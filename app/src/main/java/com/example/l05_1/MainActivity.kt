@@ -17,17 +17,18 @@ class MainActivity : AppCompatActivity() {
     fun setNavigationButtons() {
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
+        navView.menu.getItem(0).isChecked = true
 
         navView.setNavigationItemSelectedListener { menuItem ->
             when(menuItem.itemId) {
 //                R.id.drawer_button1 -> startActivity(Intent(this, MainActivity::class.java))
                 R.id.drawer_button2 -> {
-                    drawerLayout.close()
                     startActivity(Intent(this, Activity2::class.java))
+                    super.onBackPressed()
                 }
                 R.id.drawer_button3 -> {
-                    drawerLayout.close()
                     startActivity(Intent(this, Activity3::class.java))
+                    super.onBackPressed()
                 }
             }
 

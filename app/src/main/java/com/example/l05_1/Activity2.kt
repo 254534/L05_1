@@ -37,12 +37,19 @@ class Activity2 : AppCompatActivity() {
     fun setNavigationButtons() {
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
+        navView.menu.getItem(1).isChecked = true
 
         navView.setNavigationItemSelectedListener { menuItem ->
             when(menuItem.itemId) {
-                R.id.drawer_button1 -> startActivity(Intent(this, MainActivity::class.java))
+                R.id.drawer_button1 -> {
+                    startActivity(Intent(this, MainActivity::class.java))
+                    this.onBackPressed()
+                }
 //                R.id.drawer_button2 -> startActivity(Intent(this, Activity2::class.java))
-                R.id.drawer_button3 -> startActivity(Intent(this, Activity3::class.java))
+                R.id.drawer_button3 -> {
+                    startActivity(Intent(this, Activity3::class.java))
+                    this.onBackPressed()
+                }
             }
 
             true
@@ -98,7 +105,7 @@ class Activity2 : AppCompatActivity() {
         val seekBar: SeekBar = findViewById(R.id.seekBar)
         seekBar.max = 30
         seekBar.setOnSeekBarChangeListener(seekBarListener)
-//        setNavigationButtons()
+        setNavigationButtons()
         text1 = findViewById(R.id.editText1)
         text2 = findViewById(R.id.editText2)
 
