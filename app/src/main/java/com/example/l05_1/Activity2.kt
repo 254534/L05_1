@@ -14,6 +14,8 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 
 class Activity2 : AppCompatActivity() {
+    private lateinit var text1: EditText
+    private lateinit var text2: EditText
     fun setNavigationButtons() {
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
@@ -30,8 +32,6 @@ class Activity2 : AppCompatActivity() {
     }
 
     fun changeBackgroundColorBothTexts(color: Int) {
-        val text1: EditText = findViewById(R.id.editText1)
-        val text2: EditText = findViewById(R.id.editText2)
         text1.setBackgroundColor(color)
         text2.setBackgroundColor(color)
         text1.setTextColor(Color.WHITE)
@@ -39,8 +39,6 @@ class Activity2 : AppCompatActivity() {
     }
 
     fun changeFontBothTexts(typeface: Typeface) {
-        val text1: EditText = findViewById(R.id.editText1)
-        val text2: EditText = findViewById(R.id.editText2)
         text1.typeface = typeface
         text2.typeface = typeface
     }
@@ -83,6 +81,8 @@ class Activity2 : AppCompatActivity() {
         seekBar.max = 30
         seekBar.setOnSeekBarChangeListener(seekBarListener)
 //        setNavigationButtons()
+        text1 = findViewById(R.id.editText1)
+        text2 = findViewById(R.id.editText2)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -93,8 +93,6 @@ class Activity2 : AppCompatActivity() {
     val seekBarListener = object: SeekBar.OnSeekBarChangeListener {
         override fun onProgressChanged(seekBar: SeekBar, i: Int, b: Boolean) {
             val fontSize: Int = i + 20
-            val text1: EditText = findViewById(R.id.editText1)
-            val text2: EditText = findViewById(R.id.editText2)
             text1.textSize = fontSize.toFloat()
             text2.textSize = fontSize.toFloat()
         }
