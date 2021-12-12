@@ -3,11 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/drawer_button1"
-        android:title="Main" />
+        android:title="Main Activity" />
     <item
         android:id="@+id/drawer_button2"
-        android:title="2" />
+        android:title="Activity 2" />
     <item
         android:id="@+id/drawer_button3"
-        android:title="3" />
+        android:title="Activity 3" />
 </menu>

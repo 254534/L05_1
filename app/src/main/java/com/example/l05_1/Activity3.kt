@@ -15,7 +15,7 @@ class Activity3 : AppCompatActivity() {
             when(menuItem.itemId) {
                 R.id.drawer_button1 -> startActivity(Intent(this, MainActivity::class.java))
                 R.id.drawer_button2 -> startActivity(Intent(this, Activity2::class.java))
-//                R.id.drawer_button3 -> startActivity(Intent(this, Activity2::class.java))
+//                R.id.drawer_button3 -> startActivity(Intent(this, Activity3::class.java))
             }
 
             true
