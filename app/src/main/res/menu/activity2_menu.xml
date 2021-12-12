@@ -6,11 +6,11 @@
     <group>
         <item
             android:id="@+id/activity2_option1"
-            android:title="Color: RED">
+            android:title="Color: PINK">
         </item>
         <item
             android:id="@+id/activity2_option2"
-            android:title="Color: GREEN">
+            android:title="Color: PURPLE">
         </item>
         <item
             android:id="@+id/activity2_option3"
@@ -20,17 +20,17 @@
 
     <item
         android:id="@+id/activity2_option4"
-        android:title="Font size:">
+        android:title="Font">
 
         <menu
             android:id="@+id/activity2_submenu1" >
             <item
                 android:id="@+id/activity2_submenu1_option1"
-                android:title="1">
+                android:title="monospace">
             </item>
             <item
                 android:id="@+id/activity2_submenu1_option2"
-                android:title="2">
+                android:title="default bold">
             </item>
         </menu>
     </item>
