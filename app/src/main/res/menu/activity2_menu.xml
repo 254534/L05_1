@@ -6,15 +6,21 @@
     <group>
         <item
             android:id="@+id/activity2_option1"
-            android:title="Color: PINK">
-        </item>
+            android:icon="@drawable/ic_baseline_color_pink"
+            android:title="PINK"
+            app:showAsAction="ifRoom"
+            ></item>
         <item
             android:id="@+id/activity2_option2"
-            android:title="Color: PURPLE">
+            android:icon="@drawable/ic_baseline_color_purple"
+            android:title="PURPLE"
+            app:showAsAction="ifRoom">
         </item>
         <item
             android:id="@+id/activity2_option3"
-            android:title="Color: BLUE">
+            android:icon="@drawable/ic_baseline_color_blue"
+            android:title="BLUE"
+            app:showAsAction="ifRoom">
         </item>
     </group>
 
@@ -26,14 +32,17 @@
             android:id="@+id/activity2_submenu1" >
             <item
                 android:id="@+id/activity2_submenu1_option1"
+                android:icon="@drawable/ic_baseline_monospace"
                 android:title="monospace">
             </item>
             <item
                 android:id="@+id/activity2_submenu1_option2"
+                android:icon="@drawable/ic_baseline_bold"
                 android:title="default bold">
             </item>
             <item
                 android:id="@+id/activity2_submenu1_option3"
+                android:icon="@drawable/ic_baseline_default"
                 android:title="default">
             </item>
         </menu>

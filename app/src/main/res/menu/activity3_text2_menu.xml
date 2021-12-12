@@ -6,6 +6,7 @@
     <group android:checkableBehavior="all">
         <item
             android:id="@+id/activity3_editText2_item1"
+            android:icon="@drawable/ic_baseline_bold"
             android:title="Bold"/>
         <item
             android:id="@+id/activity3_editText2_item2"
