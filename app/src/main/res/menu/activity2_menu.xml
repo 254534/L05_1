@@ -26,6 +26,7 @@
 
     <item
         android:id="@+id/activity2_option4"
+        android:icon="@drawable/ic_baseline_font"
         android:title="Font">
 
         <menu
