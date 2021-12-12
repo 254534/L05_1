@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <group>
+        <item
+            android:id="@+id/activity2_option1"
+            android:title="Color: RED">
+        </item>
+        <item
+            android:id="@+id/activity2_option2"
+            android:title="Color: GREEN">
+        </item>
+        <item
+            android:id="@+id/activity2_option3"
+            android:title="Color: BLUE">
+        </item>
+    </group>
+
+    <item
+        android:id="@+id/activity2_option4"
+        android:title="Font size:">
+
+        <menu
+            android:id="@+id/activity2_submenu1" >
+            <item
+                android:id="@+id/activity2_submenu1_option1"
+                android:title="1">
+            </item>
+            <item
+                android:id="@+id/activity2_submenu1_option2"
+                android:title="2">
+            </item>
+        </menu>
+    </item>
+
+</menu>

@@ -1,8 +1,12 @@
 package com.example.l05_1
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.EditText
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 
@@ -22,9 +26,42 @@ class Activity2 : AppCompatActivity() {
         }
     }
 
+    fun changeBackgroundColorBothTexts(color: Int) {
+        val text1: EditText = findViewById(R.id.editText1)
+        val text2: EditText = findViewById(R.id.editText2)
+        text1.setBackgroundColor(color)
+        text2.setBackgroundColor(color)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+
+        return when(item.itemId) {
+            R.id.activity2_option1 -> {
+                changeBackgroundColorBothTexts(Color.RED)
+                true
+            }
+            R.id.activity2_option2 -> {
+                changeBackgroundColorBothTexts(Color.GREEN)
+                true
+            }
+            R.id.activity2_option3 -> {
+                changeBackgroundColorBothTexts(Color.BLUE)
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_2)
 //        setNavigationButtons()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.activity2_menu, menu)
+        return true
     }
 }
