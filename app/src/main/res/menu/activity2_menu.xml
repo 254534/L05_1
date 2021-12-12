@@ -32,6 +32,10 @@
                 android:id="@+id/activity2_submenu1_option2"
                 android:title="default bold">
             </item>
+            <item
+                android:id="@+id/activity2_submenu1_option3"
+                android:title="default">
+            </item>
         </menu>
     </item>
 

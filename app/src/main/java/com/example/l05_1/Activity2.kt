@@ -67,6 +67,10 @@ class Activity2 : AppCompatActivity() {
                 changeFontBothTexts(Typeface.DEFAULT_BOLD)
                 true
             }
+            R.id.activity2_submenu1_option3 -> {
+                changeFontBothTexts(Typeface.DEFAULT)
+                true
+            }
 
             else -> super.onOptionsItemSelected(item)
         }
