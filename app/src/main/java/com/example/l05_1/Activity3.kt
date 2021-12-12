@@ -2,13 +2,12 @@ package com.example.l05_1
 
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.ActionMode
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import android.widget.EditText
+import android.widget.Toast
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 
@@ -45,6 +44,8 @@ class Activity3 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_3)
         editText = findViewById(R.id.editTextText_activity3)
+        val editText2: EditText = findViewById(R.id.activity3_editText2)
+        registerForContextMenu(editText2)
 
         val myAMCallback: ActionMode.Callback = object: ActionMode.Callback
         {
@@ -85,4 +86,56 @@ class Activity3 : AppCompatActivity() {
 
 //        setNavigationButtons()
     }
+
+    override fun onCreateContextMenu(
+        menu: ContextMenu?,
+        v: View?,
+        menuInfo: ContextMenu.ContextMenuInfo?
+    ) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        if (menu != null) {
+            menuInflater.inflate(R.menu.activity3_text2_menu, menu)
+            menu.getItem(0).isChecked = isBold
+            menu.getItem(1).isChecked = isItalic
+        }
+    }
+    private var isBold: Boolean = false
+    private var isItalic: Boolean = false
+
+    fun updateEditText2(){
+        val editText2: EditText = findViewById(R.id.activity3_editText2)
+        if(isBold && isItalic) {
+            editText2.typeface = Typeface.defaultFromStyle(Typeface.BOLD_ITALIC)
+        }
+        else if(isBold) {
+            editText2.typeface = Typeface.DEFAULT_BOLD
+        }
+        else if(isItalic) {
+            editText2.typeface = Typeface.defaultFromStyle(Typeface.ITALIC)
+        }
+        else {
+            editText2.typeface = Typeface.DEFAULT
+        }
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+//        Toast.makeText(this, "${item.itemId}  ${R.id.activity3_editText2_item1}", Toast.LENGTH_LONG).show()
+
+        when (item.itemId) {
+            R.id.activity3_editText2_item1 -> {
+                item.isChecked = !item.isChecked
+                isBold = item.isChecked
+                updateEditText2()
+                return true
+            }
+            R.id.activity3_editText2_item2 -> {
+                item.isChecked = !item.isChecked
+                isItalic = item.isChecked
+                updateEditText2()
+                return true
+            }
+        }
+        return super.onContextItemSelected(item)
+    }
+
 }
