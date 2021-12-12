@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.EditText
+import android.widget.SeekBar
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 
@@ -74,11 +75,27 @@ class Activity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_2)
+        val seekBar: SeekBar = findViewById(R.id.seekBar)
+        seekBar.max = 30
+        seekBar.setOnSeekBarChangeListener(seekBarListener)
 //        setNavigationButtons()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.activity2_menu, menu)
         return true
+    }
+
+    val seekBarListener = object: SeekBar.OnSeekBarChangeListener {
+        override fun onProgressChanged(seekBar: SeekBar, i: Int, b: Boolean) {
+            val fontSize: Int = i + 20
+            val text1: EditText = findViewById(R.id.editText1)
+            val text2: EditText = findViewById(R.id.editText2)
+            text1.textSize = fontSize.toFloat()
+            text2.textSize = fontSize.toFloat()
+        }
+
+        override fun onStartTrackingTouch(seekBar: SeekBar) {}
+        override fun onStopTrackingTouch(seekBar: SeekBar) {}
     }
 }
